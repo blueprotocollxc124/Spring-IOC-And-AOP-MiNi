@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding = "UTF-8" ?>
+<!--beans 根标签，里面有若干个bean子标签-->
+<beans>
+
+    <bean id = "myService"  class = "com.mini.service.MyServiceImpl">
+        <property name="countMapper" ref="countMapper"></property>
+    </bean>
+
+    <bean id = "countMapper"  class = "com.mini.mapper.CountMapperImpl"></bean>
+
+
+</beans>
