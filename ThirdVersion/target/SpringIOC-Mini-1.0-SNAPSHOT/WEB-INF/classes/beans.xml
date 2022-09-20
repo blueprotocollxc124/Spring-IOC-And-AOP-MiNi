@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding = "UTF-8" ?>
+<!--beans 根标签，里面有若干个bean子标签-->
+<beans>
+
+
+    <bean id="countMapper" class="com.mini.mapper.CountMapperImpl"></bean>
+
+    <!--实例化logAOP对象-->
+    <bean id="logAop" class="com.mini.aop.LogAop"></bean>
+
+    <!--实例化代理工厂-->
+    <bean id="jdkInvocationHandler" class="com.mini.aop.JdkInvocationHandler">
+        <property name="target" ref="myService"/>
+    </bean>
+
+    <bean id="myService" class="com.mini.service.MyServiceImpl">
+        <property name="countMapper" ref="countMapper"></property>
+    </bean>
+
+
+</beans>
